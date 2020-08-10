@@ -1,0 +1,10 @@
+{{form.valid}}
+<br>
+{{form.value | json}}
+<form #form="ngForm" novalidate>
+    <input type="text" name="email" ngModel placeholder="Email" autocomplete="off"
+    required minlength="5" #emailTemplateVariable="ngModel">
+    <span *ngIf="!emailTemplateVariable.valid && (emailTemplateVariable.dirty || emailTemplateVariable.touched)">Email obrigatório</span>
+    <br>
+    <button [disabled]="!form.valid">Salvar</button>
+</form>
