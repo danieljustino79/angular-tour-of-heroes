@@ -1,0 +1,6 @@
+<form [formGroup]="orderForm" novalidate>
+    <input type="text" formControlName="email" id="email" placeholder="Email" autocomplete="off">
+    <span *ngIf="!email.valid && (email.dirty || email.touched)">Email obrigatório</span>
+    <br>
+    <button [disabled]="!orderForm.valid">Salvar</button>
+</form>
